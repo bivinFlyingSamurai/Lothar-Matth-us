@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="KeyboardIcons.LXX_Light">
+        <!-- Keyboard icons -->
+        <item name="iconShiftKey">@drawable/sn_keyboard_shift</item>
+        <item name="iconDeleteKey">@drawable/icon_delete</item>
+        <item name="iconSettingsKey">@drawable/icon_setting</item>
+        <item name="iconSpaceKey">@null</item>
+        <item name="iconEnterKey">@drawable/icon_enter</item>
+        <item name="iconGoKey">@drawable/icon_next</item>
+        <item name="iconSearchKey">@drawable/icon_search</item>
+        <item name="iconSendKey">@drawable/sym_keyboard_send_lxx_dark</item>
+        <item name="iconNextKey">@drawable/icon_next</item>
+        <item name="iconDoneKey">@drawable/sym_keyboard_done_lxx_dark</item>
+        <item name="iconPreviousKey">@drawable/icon_back</item>
+        <item name="iconTabKey">@drawable/sym_keyboard_tab_lxx_dark</item>
+        <item name="iconShortcutKey">@drawable/sym_keyboard_voice_lxx_dark</item>
+        <item name="iconSpaceKeyForNumberLayout">@drawable/sym_keyboard_space_lxx_dark</item>
+        <item name="iconShiftKeyShifted">@drawable/sn_keyboard_shift_locked</item>
+        <item name="iconShortcutKeyDisabled">@drawable/sym_keyboard_voice_off_lxx_dark</item>
+        <item name="iconLanguageSwitchKey">@drawable/icon_language</item>
+        <item name="iconZwnjKey">@drawable/sym_keyboard_zwnj_lxx_dark</item>
+        <item name="iconZwjKey">@drawable/sym_keyboard_zwj_lxx_dark</item>
+        <item name="iconEmojiActionKey">@drawable/icon_emoji</item>
+        <item name="iconEmojiNormalKey">@drawable/icon_emoji</item>
+    </style>
+</resources>

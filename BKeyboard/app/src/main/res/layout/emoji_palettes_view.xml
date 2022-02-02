@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.android.inputmethod.keyboard.emoji.EmojiPalettesView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:orientation="vertical"
+    style="?attr/emojiPalettesViewStyle">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/menu_strip_view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/emoji_tab_page_indicator_background_holo"
+        android:gravity="center">
+        <ImageView
+            android:id="@+id/menu_news"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:src="@drawable/ic_news" />
+
+        <ImageView
+            android:id="@+id/menu_puma"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:src="@drawable/ic_puma" />
+
+        <ImageView
+            android:id="@+id/menu_play"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:src="@drawable/ic_play_button" />
+
+        <ImageView
+            android:id="@+id/menu_home"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="4dp"
+            android:src="@drawable/ic_app_logo" />
+
+
+        <ImageView
+            android:id="@+id/menu_instagram"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:src="@drawable/ic_instagram" />
+
+        <ImageView
+            android:id="@+id/menu_twitter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:src="@drawable/ic_twitter" />
+
+
+        <ImageView
+            android:id="@+id/menu_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:src="@drawable/ic_white_settings" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/config_suggestions_strip_height"
+        style="?attr/suggestionStripViewStyle">
+
+        <TabHost
+            android:id="@+id/emoji_category_tabhost"
+            android:layout_width="0dip"
+            android:layout_weight="87.5"
+            android:layout_height="match_parent">
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"/>
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="0dip"
+                android:layout_height="0dip"
+            >
+                <!-- Empty placeholder that TabHost requires. But we don't use it to actually
+                     display anything. We monitor the tab changes and change the ViewPager.
+                     Similarly the ViewPager swipes are intercepted and passed to the TabHost. -->
+                <View
+                    android:id="@+id/emoji_keyboard_dummy"
+                    android:layout_width="0dip"
+                    android:layout_height="0dip"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </TabHost>
+
+        <include layout="@layout/suggestion_divider" />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/emoji_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/sn_ime_name"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/emoji_keyboard_pager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.android.inputmethod.keyboard.emoji.EmojiCategoryPageIndicatorView
+                android:id="@+id/emoji_category_page_id_view"
+                android:layout_width="match_parent"
+                android:layout_height="2dip" />
+
+            <LinearLayout
+                android:id="@+id/emoji_action_bar"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dip"
+                android:paddingTop="7dp"
+                android:paddingBottom="0dp">
+
+                <TextView
+                    android:id="@+id/emoji_keyboard_alphabet_left"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.15"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:hapticFeedbackEnabled="false"
+                    android:soundEffectsEnabled="false" />
+
+                <TextView
+                    android:id="@+id/emoji_keyboard_comma"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.10"
+                    android:layout_marginStart="5dp"
+                    android:gravity="center"
+                    android:text=","
+                    android:layout_height="match_parent"
+                    android:hapticFeedbackEnabled="false"
+                    android:soundEffectsEnabled="false" />
+
+                <RelativeLayout
+                    android:id="@+id/emoji_keyboard_space"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.55"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_height="match_parent"
+                    android:hapticFeedbackEnabled="false"
+                    android:soundEffectsEnabled="false"
+                    android:contentDescription="@string/spoken_description_space">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        app:srcCompat="@drawable/sym_keyboard_space"/>
+
+                    <View
+                        android:id="@+id/emoji_keyboard_space_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true" />
+<!--                                    android:background="@drawable/sn_rounded_view"-->
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/emoji_keyboard_dot"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.10"
+                    android:layout_marginEnd="5dp"
+                    android:gravity="center"
+                    android:text="."
+                    android:layout_height="match_parent"
+                    android:hapticFeedbackEnabled="false"
+                    android:soundEffectsEnabled="false" />
+
+                <TextView
+                    android:id="@+id/emoji_keyboard_alphabet_right"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.15"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_height="match_parent"
+                    android:hapticFeedbackEnabled="false"
+                    android:soundEffectsEnabled="false" />
+
+                <ImageButton
+                    android:id="@+id/emoji_keyboard_delete"
+                    android:layout_width="0dip"
+                    android:layout_weight="0.10"
+                    android:gravity="center"
+                    android:layout_height="match_parent"
+                    android:hapticFeedbackEnabled="false"
+                    android:soundEffectsEnabled="false"
+                    android:contentDescription="@string/spoken_description_delete" />
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </FrameLayout>
+</com.android.inputmethod.keyboard.emoji.EmojiPalettesView>

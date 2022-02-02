@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/ic_app_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!--                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"-->
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/sn_settings"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/logo"
+                    tools:ignore="NotSibling" />
+
+                <View
+                    android:id="@+id/view_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@color/setup_welcome_video_margin_color"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/button_language"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:drawableStart="@drawable/ic_language"
+                    android:drawableEnd="@drawable/icon_next"
+                    android:drawablePadding="12dp"
+                    android:gravity="start|top|bottom"
+                    android:padding="12dp"
+                    android:text="@string/select_language"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/view_line" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/button_themes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableStart="@drawable/ic_icon_theme"
+                    android:drawableEnd="@drawable/icon_next"
+                    android:drawablePadding="12dp"
+                    android:gravity="start|top|bottom"
+                    android:padding="12dp"
+                    android:text="@string/settings_screen_theme"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/button_language" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/button_background"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableStart="@drawable/ic_bg_image"
+                    android:drawableEnd="@drawable/icon_next"
+                    android:drawablePadding="12dp"
+                    android:gravity="start|top|bottom"
+                    android:padding="12dp"
+                    android:text="@string/sn_background"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/button_themes" />
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/button_effects"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/white"
+                    android:drawableStart="@drawable/ic_visual_affect"
+                    android:drawablePadding="12dp"
+                    android:gravity="start"
+                    android:padding="12dp"
+                    android:text="@string/sn_visual_effects"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/button_background"
+                    app:theme="@style/ColorSwitchStyle"
+                    tools:layout_editor_absoluteX="0dp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/button_sound"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/white"
+                    android:drawableStart="@drawable/ic_toune"
+                    android:drawablePadding="12dp"
+                    android:gravity="start"
+                    android:padding="12dp"
+                    android:text="@string/sn_sound"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/button_effects"
+                    app:theme="@style/ColorSwitchStyle" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/layout_key_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/button_sound"
+                    tools:layout_editor_absoluteX="0dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/button_key_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableStart="@drawable/ic_keyboard"
+                        android:drawablePadding="12dp"
+                        android:gravity="start|center"
+                        android:padding="12dp"
+                        android:text="@string/sn_type"
+                        android:textAllCaps="false"
+                        android:textColor="#fff"
+                        android:textSize="15sp" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/button_key_type_e"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="5dp"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:text="Qwerty"
+                        android:textAllCaps="true"
+                        android:textColor="#fff"
+                        android:textSize="15sp" />
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/vibration_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:backgroundTint="@color/white"
+                    android:defaultValue="@bool/config_default_vibration_enabled"
+                    android:drawableStart="@drawable/ic_toune"
+                    android:drawablePadding="12dp"
+                    android:gravity="start"
+                    android:padding="12dp"
+                    android:persistent="true"
+                    android:text="@string/haptic_feedback_vibration"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/layout_key_type"
+                    app:theme="@style/ColorSwitchStyle" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/button_imprint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableStart="@drawable/ic_warning"
+                    android:drawableEnd="@drawable/icon_next"
+                    android:drawablePadding="12dp"
+                    android:gravity="start|top|bottom"
+                    android:padding="12dp"
+                    android:text="@string/sn_imprint"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/vibration_id" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/button_privacy_policy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableStart="@drawable/ic_privacy"
+                    android:drawableEnd="@drawable/icon_next"
+                    android:drawablePadding="12dp"
+                    android:gravity="start|top|bottom"
+                    android:padding="12dp"
+                    android:text="@string/sn_policy"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/button_imprint" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/button_conditions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableStart="@drawable/ic_terms"
+                    android:drawableEnd="@drawable/icon_next"
+                    android:drawablePadding="12dp"
+                    android:gravity="start|top|bottom"
+                    android:padding="12dp"
+                    android:text="@string/sn_conditions"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="15sp"
+                    app:layout_constraintTop_toBottomOf="@id/button_privacy_policy" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
